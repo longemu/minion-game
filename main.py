@@ -1,23 +1,3 @@
-##TODO LIST
-# AUDIO
-    # Background Music - DONE
-    # Hit Music - DONE
-    # Banana Collecting Music - DONE
-    # Died Music
-    # Won Music
-# LOOKS
-    # Fire Makeover - DONE
-    # Banana Makeover - DONE
-    # Hit Looks - DONE
-    # Scoreboard Makeover
-    # Won Screen
-    # Died Screen
-# FEATURES
-    # Coding Logic for Levels
-    # Level 1
-    # Level 2
-    # Level 3
-
 import os
 import random   
 import math
