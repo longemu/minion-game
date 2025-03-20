@@ -81,7 +81,7 @@ class Player(pygame.sprite.Sprite):
         self.jump_count = 0
         self.hit = False
         self.hit_count = 0
-        self.lives = 3
+        self.lives = 300
         self.hit_cooldown = 0
         self.score = 0
         self.hit_sound = hit_sound
@@ -464,8 +464,38 @@ def load_level(level_index):
 ###################################################################### LEVELS
 
 levels = [
-    #default level
-    {
+
+    # easy level
+        {
+            "ending": 33,
+            "background": "clouds_one.jpeg",
+            "blocks": [
+                (0 * block_size, HEIGHT - block_size, block_size), (1 * block_size, HEIGHT - block_size, block_size), (2 * block_size, HEIGHT - block_size, block_size),
+                (3 * block_size, HEIGHT - block_size, block_size), (4 * block_size, HEIGHT - block_size*2, block_size), (5 * block_size, HEIGHT - block_size*2, block_size),
+                (6 * block_size, HEIGHT - block_size*2, block_size), (7 * block_size, HEIGHT - block_size*2, block_size), (8 * block_size, HEIGHT - block_size*3, block_size),
+                (9 * block_size, HEIGHT - block_size*3, block_size), (10 * block_size, HEIGHT - block_size*3, block_size), (11 * block_size, HEIGHT - block_size*3, block_size),
+                (12 * block_size, HEIGHT - block_size*3, block_size), (13 * block_size, HEIGHT - block_size*3, block_size), (14 * block_size, HEIGHT - block_size*5, block_size),
+                (15 * block_size, HEIGHT - block_size*5, block_size), (16 * block_size, HEIGHT - block_size*5, block_size), (17 * block_size, HEIGHT - block_size*3, block_size),
+                (18 * block_size, HEIGHT - block_size*3, block_size), (19 * block_size, HEIGHT - block_size*3, block_size), (22 * block_size, HEIGHT - block_size*3, block_size),
+                (23 * block_size, HEIGHT - block_size*3, block_size), (24 * block_size, HEIGHT - block_size*3, block_size), (26 * block_size, HEIGHT - block_size*4, block_size),
+                (27 * block_size, HEIGHT - block_size*5, block_size), (28 * block_size, HEIGHT - block_size*5, block_size), (30 * block_size, HEIGHT - block_size, block_size),
+                (31 * block_size, HEIGHT - block_size, block_size), (32 * block_size, HEIGHT - block_size, block_size), (33 * block_size, HEIGHT - block_size, block_size)
+            ],
+            "fires": [
+                (10 * block_size, HEIGHT - block_size*3 - 64, 16, 32),(23 * block_size, HEIGHT - block_size*3 - 64, 16, 32),(28 * block_size, HEIGHT - block_size*5 - 64, 16, 32),
+            ],
+            "bananas": [
+                (2 * block_size, HEIGHT - 2 * block_size, 32, 32),(3 * block_size, HEIGHT - 2 * block_size, 32, 32),(4 * block_size, HEIGHT - 3 * block_size, 32, 32),
+                (5 * block_size, HEIGHT - 3 * block_size, 32, 32),(6 * block_size, HEIGHT - 3 * block_size, 32, 32),(7 * block_size, HEIGHT - 3 * block_size, 32, 32),
+                (12 * block_size, HEIGHT - 4 * block_size, 32, 32),(13 * block_size, HEIGHT - 4 * block_size, 32, 32),(15 * block_size, HEIGHT - 6 * block_size, 32, 32),
+                (16 * block_size, HEIGHT - 6 * block_size, 32, 32),(17 * block_size, HEIGHT - 7 * block_size, 32, 32),(17 * block_size, HEIGHT - 4 * block_size, 32, 32),
+                (18 * block_size, HEIGHT - 4 * block_size, 32, 32),(19 * block_size, HEIGHT - 4 * block_size, 32, 32),(26 * block_size, HEIGHT - 6 * block_size, 32, 32),
+                (33 * block_size, HEIGHT - 2 * block_size, 32, 32)
+            ]
+        },
+
+    # medium level
+        {
         "ending": 26,
         "background": "clouds_one.jpeg",
         "blocks": [
@@ -493,32 +523,42 @@ levels = [
             (9 * block_size, HEIGHT - 8 * block_size, 32, 32)
         ]
     },
-    # easy level
-    {
-        "ending": 33,
+
+    #hard level
+
+        {
+        "ending": 34,
         "background": "clouds_one.jpeg",
         "blocks": [
-            (0 * block_size, HEIGHT - block_size, block_size), (1 * block_size, HEIGHT - block_size, block_size), (2 * block_size, HEIGHT - block_size, block_size),
-            (3 * block_size, HEIGHT - block_size, block_size), (4 * block_size, HEIGHT - block_size*2, block_size), (5 * block_size, HEIGHT - block_size*2, block_size),
-            (6 * block_size, HEIGHT - block_size*2, block_size), (7 * block_size, HEIGHT - block_size*2, block_size), (8 * block_size, HEIGHT - block_size*3, block_size),
-            (9 * block_size, HEIGHT - block_size*3, block_size), (10 * block_size, HEIGHT - block_size*3, block_size), (11 * block_size, HEIGHT - block_size*3, block_size),
-            (12 * block_size, HEIGHT - block_size*3, block_size), (13 * block_size, HEIGHT - block_size*3, block_size), (14 * block_size, HEIGHT - block_size*5, block_size),
-            (15 * block_size, HEIGHT - block_size*5, block_size), (16 * block_size, HEIGHT - block_size*5, block_size), (17 * block_size, HEIGHT - block_size*3, block_size),
-            (18 * block_size, HEIGHT - block_size*3, block_size), (19 * block_size, HEIGHT - block_size*3, block_size), (22 * block_size, HEIGHT - block_size*3, block_size),
-            (23 * block_size, HEIGHT - block_size*3, block_size), (24 * block_size, HEIGHT - block_size*3, block_size), (26 * block_size, HEIGHT - block_size*4, block_size),
-            (27 * block_size, HEIGHT - block_size*5, block_size), (28 * block_size, HEIGHT - block_size*5, block_size), (30 * block_size, HEIGHT - block_size, block_size),
-            (31 * block_size, HEIGHT - block_size, block_size), (32 * block_size, HEIGHT - block_size, block_size), (33 * block_size, HEIGHT - block_size, block_size)
+            (1 * block_size, HEIGHT - block_size, block_size), (3 * block_size, HEIGHT - block_size*2, block_size),
+            (4 * block_size, HEIGHT - block_size*2, block_size),(6 * block_size, HEIGHT - block_size*2, block_size),
+            (8 * block_size, HEIGHT - block_size*4, block_size),(9 * block_size, HEIGHT - block_size*4, block_size),
+            (10 * block_size, HEIGHT - block_size*4, block_size),
+            (6 * block_size, HEIGHT - block_size*6, block_size),(7 * block_size, HEIGHT - block_size*6, block_size),
+            (9 * block_size, HEIGHT - block_size*7, block_size),(12 * block_size, HEIGHT - block_size*7, block_size),
+            (14 * block_size, HEIGHT - block_size*6, block_size),(15 * block_size, HEIGHT - block_size*5, block_size),
+            (15 * block_size, HEIGHT - block_size*3, block_size),(16 * block_size, HEIGHT - block_size*3, block_size),
+            (19 * block_size, HEIGHT - block_size*4, block_size),(20 * block_size, HEIGHT - block_size*5, block_size),
+            (22 * block_size, HEIGHT - block_size*7, block_size),(23 * block_size, HEIGHT - block_size*7, block_size),
+            (25 * block_size, HEIGHT - block_size*7, block_size),(27 * block_size, HEIGHT - block_size*6, block_size),
+            (28 * block_size, HEIGHT - block_size*6, block_size),(29 * block_size, HEIGHT - block_size, block_size),
+            (30 * block_size, HEIGHT - block_size, block_size),(31 * block_size, HEIGHT - block_size, block_size),
+            (33 * block_size, HEIGHT - block_size*3, block_size),(34 * block_size, HEIGHT - block_size*3, block_size),
+
         ],
         "fires": [
-            (10 * block_size, HEIGHT - block_size*3 - 64, 16, 32),(23 * block_size, HEIGHT - block_size*3 - 64, 16, 32),(28 * block_size, HEIGHT - block_size*5 - 64, 16, 32),
+            (4 * block_size, HEIGHT - block_size*2 - 64, 16, 32),(10 * block_size, HEIGHT - block_size*4 - 64, 16, 32),
+            (6 * block_size, HEIGHT - block_size*2 - 64, 16, 32),(23 * block_size, HEIGHT - block_size*7 - 64, 16, 32),
+            (27 * block_size, HEIGHT - block_size*6 - 64, 16, 32),(30 * block_size, HEIGHT - block_size - 64, 16, 32),
+            (31 * block_size, HEIGHT - block_size - 64, 16, 32)
         ],
         "bananas": [
-            (2 * block_size, HEIGHT - 2 * block_size, 32, 32),(3 * block_size, HEIGHT - 2 * block_size, 32, 32),(4 * block_size, HEIGHT - 3 * block_size, 32, 32),
-            (5 * block_size, HEIGHT - 3 * block_size, 32, 32),(6 * block_size, HEIGHT - 3 * block_size, 32, 32),(7 * block_size, HEIGHT - 3 * block_size, 32, 32),
-            (12 * block_size, HEIGHT - 4 * block_size, 32, 32),(13 * block_size, HEIGHT - 4 * block_size, 32, 32),(15 * block_size, HEIGHT - 6 * block_size, 32, 32),
-            (16 * block_size, HEIGHT - 6 * block_size, 32, 32),(17 * block_size, HEIGHT - 7 * block_size, 32, 32),(17 * block_size, HEIGHT - 4 * block_size, 32, 32),
-            (18 * block_size, HEIGHT - 4 * block_size, 32, 32),(19 * block_size, HEIGHT - 4 * block_size, 32, 32),(26 * block_size, HEIGHT - 6 * block_size, 32, 32),
-            (33 * block_size, HEIGHT - 2 * block_size, 32, 32)
+            (8 * block_size, HEIGHT - 5 * block_size, 32, 32),(6 * block_size, HEIGHT - 7 * block_size, 32, 32),
+            (7 * block_size, HEIGHT - 7 * block_size, 32, 32),(9 * block_size, HEIGHT - 8 * block_size, 32, 32),
+            (15 * block_size, HEIGHT - 6 * block_size, 32, 32),(15 * block_size, HEIGHT - 4 * block_size, 32, 32),
+            (19 * block_size, HEIGHT - 5 * block_size, 32, 32),(20 * block_size, HEIGHT - 6 * block_size, 32, 32),
+            (29 * block_size, HEIGHT - 2 * block_size, 32, 32),(34 * block_size, HEIGHT - 4 * block_size, 32, 32),
+            
         ]
     },
 
@@ -528,7 +568,7 @@ levels = [
 
 def main(window):
     clock = pygame.time.Clock()
-    level_index = 1
+    level_index = 2
     level_end, background, bg_image, objects = load_level(level_index)#############change background
  
 
